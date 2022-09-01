@@ -15,6 +15,8 @@ class CreateUserLoginLogsTable extends Migration
     {
         Schema::create('user_login_logs', function (Blueprint $table) {
             $table->id();
+            $table->unsignedInteger('user_id');
+            $table->string('account_type');
             $table->timestamps();
         });
     }

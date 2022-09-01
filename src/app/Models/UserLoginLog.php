@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class UserLoginLog extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'user_id',
+        'account_type'
+    ];
 }
