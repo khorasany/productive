@@ -15,7 +15,7 @@ class CreateHabitsTable extends Migration
     {
         Schema::create('habits', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('user_id')->default(null);
             $table->string('name');
             $table->string('icon')->nullable();
             $table->string('habit_type')->default('Daily'); // Daily Weekly Monthly

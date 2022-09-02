@@ -29,4 +29,9 @@ class HabitReport extends Model
         'status',
         'done_status',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class,'id','user_id');
+    }
 }

@@ -45,6 +45,21 @@ class User extends Authenticatable
 
     public function log()
     {
-        $this->belongsTo(UserLoginLog::class,'user_id','id');
+        return $this->belongsTo(UserLoginLog::class,'id','user_id');
+    }
+
+    public function habit()
+    {
+        return $this->hasOne(Habit::class,'id','user_id');
+    }
+
+    public function picker()
+    {
+        return $this->hasOne(HabitPicker::class,'id','user_id');
+    }
+
+    public function report()
+    {
+        return $this->hasMany(HabitReport::class,'id','user_id');
     }
 }
