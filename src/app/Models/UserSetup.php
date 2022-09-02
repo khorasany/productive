@@ -8,4 +8,19 @@ use Illuminate\Database\Eloquent\Model;
 class UserSetup extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'user_id',
+        'question_id',
+        'answer',
+    ];
+
+    public function user()
+    {
+        $this->belongsTo(User::class,'id','user_id');
+    }
+
+    public function question()
+    {
+        $this->hasOne(Question::class,'id','question_id');
+    }
 }

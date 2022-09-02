@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class CategoryTaxonomy extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'category_id',
+        'habit_id',
+    ];
 }

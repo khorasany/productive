@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class HabitPicker extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'habit_id',
+        'user_id',
+        'structure',
+    ];
 }
