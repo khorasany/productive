@@ -33,7 +33,11 @@ class AuthController extends Controller
         ], 201);
     }
 
-    public function social_register(Request $request)
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function social_register(Request $request): \Illuminate\Http\JsonResponse
     {
         $fields = $request->validate([
             'name' => 'required|string',
@@ -49,7 +53,11 @@ class AuthController extends Controller
         ],201);
     }
 
-    public function login(Request $request)
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function login(Request $request): \Illuminate\Http\JsonResponse
     {
         $fields = $request->validate([
             'email' => 'required|string',
@@ -68,7 +76,11 @@ class AuthController extends Controller
         ]);
     }
 
-    public function social_login(Request $request)
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function social_login(Request $request): \Illuminate\Http\JsonResponse
     {
         $fields = $request->validate([
             'email' => 'required|string',
@@ -87,7 +99,11 @@ class AuthController extends Controller
         ]);
     }
 
-    public function logout(Request $request)
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function logout(Request $request): \Illuminate\Http\JsonResponse
     {
         auth()->user()->tokens()->delete();
         return response()->json([
