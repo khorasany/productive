@@ -11,7 +11,7 @@ class AuthController extends Controller
     /**
      * @var string
      */
-    private $token = 'habit-app-89klj566ln,m4nl22j';
+    private string $token = 'habit-app-89klj566ln,m4nl22j';
 
     /**
      * @param Request $request
