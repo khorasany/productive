@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\API\Habit\AdminController;
+use App\Http\Controllers\API\Habit\HabitController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,9 +20,8 @@ use App\Http\Controllers\API\Habit\AdminController;
 //Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //    return $request->user();
 //});
-const VERSION_1 = 'v1';
 
-Route::prefix(VERSION_1)->group(function() {
+Route::prefix('v1')->group(function() {
     Route::prefix('auth')->group(function() {
         // Public auth routes
         Route::post('register',[AuthController::class,'register']);
@@ -39,5 +39,10 @@ Route::prefix(VERSION_1)->group(function() {
         Route::get('users',[AdminController::class,'users']);
         Route::post('users',[AdminController::class,'create']);
         Route::get('habits',[AdminController::class,'index']);
+    });
+
+    Route::prefix('productive')->middleware('auth:sanctum')->group(function() {
+//        Route::get('habits',['']);
+        Route::post('habits',[HabitController::class,'store']);
     });
 });
