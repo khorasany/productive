@@ -32,7 +32,7 @@ class CreateHabitReportsTable extends Migration
             $table->string('goal_amount')->nullable();
             $table->string('reminder_time')->nullable();
             $table->text('description')->nullable();
-            $table->string('elapsed_time_habituation')->default(0);
+            $table->string('elapsed_time_habituation')->default(0); // Time duration for habit
             $table->boolean('status')->default(1);
             $table->boolean('done_status')->default(1);
             $table->timestamps();

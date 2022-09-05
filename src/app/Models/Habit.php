@@ -25,9 +25,9 @@ class Habit extends Model
         'type_end_of_habit',
         'end_date',
         'goal_amount',
+        'reminder',
         'reminder_time',
         'description',
-        'elapsed_time_habituation',
         'status',
         'done_status',
     ];

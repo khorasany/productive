@@ -15,6 +15,9 @@ class CreateChallengesTable extends Migration
     {
         Schema::create('challenges', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('days_of_done');
+            $table->text('list_of_challenges');
             $table->timestamps();
 
         });

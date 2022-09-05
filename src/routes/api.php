@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\API\Habit\AdminController;
 use App\Http\Controllers\API\Habit\HabitController;
+use App\Http\Controllers\API\Habit\TaskController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,4 +46,22 @@ Route::prefix('v1')->group(function() {
 //        Route::get('habits',['']);
         Route::post('habits',[HabitController::class,'store']);
     });
+
+    Route::prefix('task')->middleware('auth:sanctum')->group(function() {
+        Route::get('/',[TaskController::class,'index']);
+        Route::post('/',[TaskController::class,'store']);
+        Route::delete('/{id}',[TaskController::class,'destroy']);
+        Route::put('/{id}',[TaskController::class,'update']);
+        Route::get('/{id}',[TaskController::class,'show']);
+    });
 });
+
+
+
+
+
+
+
+
+
+

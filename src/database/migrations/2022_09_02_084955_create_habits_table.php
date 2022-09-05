@@ -30,9 +30,9 @@ class CreateHabitsTable extends Migration
             $table->string('type_end_of_habit')->nullable();
             $table->string('end_date')->nullable();
             $table->string('goal_amount')->nullable();
+            $table->boolean('reminder')->default(0);
             $table->string('reminder_time')->nullable();
             $table->text('description')->nullable();
-            $table->string('elapsed_time_habituation')->default(0);
             $table->boolean('status')->default(1);
             $table->boolean('done_status')->default(1);
             $table->timestamps();

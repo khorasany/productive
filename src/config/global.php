@@ -11,4 +11,8 @@ return [
         'Afternoon',
         'Evening'
     ],
+    'type_end_of_habit' => [
+        'Date',
+        'Amount'
+    ]
 ];
