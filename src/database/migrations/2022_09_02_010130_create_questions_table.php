@@ -16,7 +16,7 @@ class CreateQuestionsTable extends Migration
         Schema::create('questions', function (Blueprint $table) {
             $table->id();
             $table->string('question')->nullable(false);
-            $table->tinyInteger('answer')->nullable();
+            $table->string('answer')->nullable();
             $table->text('answers')->nullable(false);
             $table->unsignedInteger('parent')->nullable();
             $table->boolean('show')->default(1);

@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\API\Habit\AdminController;
 use App\Http\Controllers\API\Habit\HabitController;
 use App\Http\Controllers\API\Habit\TaskController;
+use App\Http\Controllers\API\Habit\QuestionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +41,13 @@ Route::prefix('v1')->group(function() {
         Route::get('users',[AdminController::class,'users']);
         Route::post('users',[AdminController::class,'create']);
         Route::get('habits',[AdminController::class,'index']);
+        Route::prefix('question')->group(function() {
+            Route::get('/',[QuestionController::class,'index']);
+            Route::get('/{id}',[QuestionController::class,'show']);
+            Route::post('/',[QuestionController::class,'store']);
+            Route::put('/{id}',[QuestionController::class,'update']);
+            Route::delete('/{id}',[QuestionController::class,'destroy']);
+        });
     });
 
     Route::prefix('productive')->middleware('auth:sanctum')->group(function() {
@@ -49,11 +57,13 @@ Route::prefix('v1')->group(function() {
 
     Route::prefix('task')->middleware('auth:sanctum')->group(function() {
         Route::get('/',[TaskController::class,'index']);
+        Route::get('/{id}',[TaskController::class,'show']);
         Route::post('/',[TaskController::class,'store']);
         Route::delete('/{id}',[TaskController::class,'destroy']);
         Route::put('/{id}',[TaskController::class,'update']);
-        Route::get('/{id}',[TaskController::class,'show']);
     });
+
+
 });
 
 
