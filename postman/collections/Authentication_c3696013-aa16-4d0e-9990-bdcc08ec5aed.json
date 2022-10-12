@@ -6,126 +6,677 @@
 	},
 	"item": [
 		{
-			"name": "Details about a user",
-			"id": "55ba72f1-368c-4ded-960e-b4553a1b6c52",
+			"name": "Productive",
+			"item": [
+				{
+					"name": "Register Habit",
+					"id": "b1455266-8cca-45be-b175-e71035e44c1e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": 1,\n    \"name\": \"Drink\",\n    \"icon\":\"test\",\n    \"habit_type\":\"Daily\",\n    \"habit_goal\":true,\n    \"several_times\":\"2\",\n    \"repeat_every_day\":true,\n    \"selected_days\":[\n        \"Monday\",\n        \"Sunday\"\n    ],\n    \"repeat_daily\":true,\n    \"end_of_habit\":false,\n    \"reminder\": false,\n    \"description\":\"this is for test\",\n    \"elapsed_time_habituation\":false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}{{port}}{{api}}/v1/productive/habits",
+							"host": [
+								"{{server}}{{port}}{{api}}"
+							],
+							"path": [
+								"v1",
+								"productive",
+								"habits"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Task",
+					"id": "df09310f-e50d-45dc-88b8-a356b7f4ac37",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "user_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "task test 1",
+									"type": "text"
+								},
+								{
+									"key": "icon",
+									"value": "icon 1",
+									"type": "text"
+								},
+								{
+									"key": "color",
+									"value": "green",
+									"type": "text"
+								},
+								{
+									"key": "date",
+									"value": "test time 1",
+									"type": "text"
+								},
+								{
+									"key": "reminder_time",
+									"value": "reminder time 1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}{{port}}{{api}}/v1/task",
+							"host": [
+								"{{server}}{{port}}{{api}}"
+							],
+							"path": [
+								"v1",
+								"task"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Log",
+					"id": "00445c3a-33be-47c6-b92f-48f7b6d5695e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Register Habit log",
+					"id": "d686f353-1188-446c-b15b-3b777fe8c220",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Register Progress",
+					"id": "28ebe1a7-bf5e-4c9a-8077-771969c14b10",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Register Category",
+					"id": "553ae706-155e-4bb0-9c1d-3897d4494ffe",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Register Question",
+					"id": "086e0331-358f-478c-89c0-3a97fbedc970",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Habits",
+					"id": "cd9c7ea9-5259-4c8d-9b59-80c599532ab7",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Habit Logs",
+					"id": "c7dbeade-b382-4a43-afb5-80c4ec19f88e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Logs",
+					"id": "e1aa6292-ac27-4120-9941-09a5dc5c3863",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Categories",
+					"id": "fc0062f1-76e1-4e55-ad02-fc5156f60b46",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Habit Progress",
+					"id": "e530d4c4-ae83-4ee0-939c-cd9857990958",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Habits Progress",
+					"id": "d51062c1-5100-4a86-9b9d-7aa8d469b512",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Questions",
+					"id": "21536d11-dabc-4c4b-92d2-4ccd612dd45f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Tasks",
+					"id": "37df1b7a-b3d4-42e3-a73c-ae39ebf01634",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}{{port}}{{api}}/v1/task",
+							"host": [
+								"{{server}}{{port}}{{api}}"
+							],
+							"path": [
+								"v1",
+								"task"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Task",
+					"id": "4bb09176-92df-4970-8d64-65a047d96a4b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{server}}{{port}}{{api}}/v1/task/1",
+							"host": [
+								"{{server}}{{port}}{{api}}"
+							],
+							"path": [
+								"v1",
+								"task",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Task",
+					"id": "e7fa8c5d-f0fa-46fc-a043-2a3c98975b35",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "name task changed",
+									"type": "text"
+								},
+								{
+									"key": "color",
+									"value": "white",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}{{port}}{{api}}/v1/task/2",
+							"host": [
+								"{{server}}{{port}}{{api}}"
+							],
+							"path": [
+								"v1",
+								"task",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Task",
+					"id": "d68e84c9-94d1-4da7-b2e3-a4351f7645ad",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}{{port}}{{api}}/v1/task/2",
+							"host": [
+								"{{server}}{{port}}{{api}}"
+							],
+							"path": [
+								"v1",
+								"task",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "fbf85df1-4190-4c81-ac63-c631e676076c",
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "51816f3b-e00d-4398-a646-c7d7b40f514a",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "f50f927c-29fb-4e42-a125-3f958f222979",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [],
+			"id": "2e559a04-997d-4dc4-a42c-92204813ebac",
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "80f1632a-fd0a-459c-bbdf-97d6e96c9a71",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "b5b34185-48d1-4a5d-b280-0ccae3e3b308",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Logout",
+			"id": "7ee4ad4c-35a3-478b-a5bc-8429b42e1bc4",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Host",
+						"value": "localhost",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{server}}{{api}}/v1/auth/logout",
+					"host": [
+						"{{server}}{{api}}"
+					],
+					"path": [
+						"v1",
+						"auth",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"id": "015988a2-82f6-44d4-ba8e-f82b27f03ca4",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Alireza saffar",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "a.khorasany@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "adygcy8b",
+							"type": "text"
+						},
+						{
+							"key": "password_confirmation",
+							"value": "adygcy8b",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{server}}{{port}}{{api}}/v1/auth/register",
+					"host": [
+						"{{server}}{{port}}{{api}}"
+					],
+					"path": [
+						"v1",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"id": "dc076b09-1c0c-4e9c-8bc8-eb38712f7aed",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "a.khorasany@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "adygcy8b",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{server}}{{api}}/v1/auth/login",
+					"host": [
+						"{{server}}{{api}}"
+					],
+					"path": [
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Social Login",
+			"id": "f74c3080-e8ac-415e-a16e-c6d5000f82e9",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "a.khorasany@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "localhost",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{server}}{{api}}/v1/auth/login/social",
+					"host": [
+						"{{server}}{{api}}"
+					],
+					"path": [
+						"v1",
+						"auth",
+						"login",
+						"social"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Social Register",
+			"id": "f60c8079-125c-4ca9-b171-0f4af9b92ebe",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
 			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Accept",
-						"value": "application/json"
-					}
-				],
+				"method": "POST",
+				"header": [],
 				"url": {
-					"raw": "{{baseUrl}}/user?id=62162794",
+					"raw": "{{server}}{{api}}/v1/register/social",
 					"host": [
-						"{{baseUrl}}"
+						"{{server}}{{api}}"
 					],
 					"path": [
-						"user"
-					],
-					"query": [
-						{
-							"key": "id",
-							"value": "62162794",
-							"description": "(Required) ID of the user"
-						}
+						"v1",
+						"register",
+						"social"
 					]
 				}
 			},
-			"response": [
-				{
-					"id": "68ea1598-dc52-45eb-a8b6-78bc8d8a7dc7",
-					"name": "Details about a user",
-					"originalRequest": {
-						"method": "GET",
-						"header": [
-							{
-								"description": "Added as a part of security scheme: basic",
-								"key": "Authorization",
-								"value": "Basic <credentials>"
-							}
-						],
-						"url": {
-							"raw": "{{baseUrl}}/user?id=62162794",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"user"
-							],
-							"query": [
-								{
-									"key": "id",
-									"value": "62162794"
-								}
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"disabled": false,
-							"description": "A link to the next page of responses",
-							"key": "x-next",
-							"value": "do ad officia"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						}
-					],
-					"cookie": [],
-					"responseTime": null,
-					"body": "{\n  \"id\": 71575510,\n  \"name\": \"nisi voluptate cillum do pr\",\n  \"tag\": \"ipsum esse\"\n}"
-				},
-				{
-					"id": "59a48467-1534-46cd-87a9-56c91b9c45ae",
-					"name": "unexpected error",
-					"originalRequest": {
-						"method": "GET",
-						"header": [
-							{
-								"description": "Added as a part of security scheme: basic",
-								"key": "Authorization",
-								"value": "Basic <credentials>"
-							}
-						],
-						"url": {
-							"raw": "{{baseUrl}}/user?id=62162794",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"user"
-							],
-							"query": [
-								{
-									"key": "id",
-									"value": "62162794"
-								}
-							]
-						}
-					},
-					"status": "Internal Server Error",
-					"code": 500,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						}
-					],
-					"cookie": [],
-					"responseTime": null,
-					"body": "{\n  \"code\": 45646,\n  \"message\": \"reprehenderit dolore fugiat enim adipisicing\"\n}"
-				}
-			]
+			"response": []
 		}
 	],
 	"auth": {
