@@ -16,8 +16,11 @@ class CreateUserSetupsTable extends Migration
         Schema::create('user_setups', function (Blueprint $table) {
             $table->id();
             $table->unsignedInteger('user_id');
-            $table->unsignedInteger('question_id');
-            $table->unsignedInteger('answer');
+            $table->unsignedInteger('question_id')->nullable();
+            $table->string('answer')->nullable();
+            $table->string('morning')->default('07:00 AM');
+            $table->string('afternoon')->default('12:01 PM');
+            $table->string('evening')->default('08:00 PM');
             $table->timestamps();
         });
     }

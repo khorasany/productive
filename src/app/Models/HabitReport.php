@@ -8,8 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class HabitReport extends Model
 {
     use HasFactory;
+
+    /**
+     * @var string[]
+     */
     protected $fillable = [
         'user_id',
+        'habit_id',
         'name',
         'habit_type',
         'habit_goal',
@@ -30,8 +35,19 @@ class HabitReport extends Model
         'done_status',
     ];
 
-    public function user()
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->belongsTo(User::class,'id','user_id');
+        return $this->belongsTo(User::class, 'user_id', 'id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function habit(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Habit::class, 'habit_id', 'id');
     }
 }

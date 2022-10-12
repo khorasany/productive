@@ -18,6 +18,7 @@ class CreateProgressTable extends Migration
             $table->unsignedInteger('habit_id');
             $table->unsignedInteger('user_id');
             $table->longText('structure');
+            $table->boolean('status')->default(1);
             $table->timestamps();
         });
     }

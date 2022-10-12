@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Models\Question;
+use App\Models\UserSetup;
 
 class QuestionRepo
 {
@@ -14,6 +15,35 @@ class QuestionRepo
         return Question::with('setup')
             ->where('show','=',1)
             ->get();
+    }
+
+    /**
+     * @return mixed
+     */
+    public static function questions_for_users()
+    {
+        return Question::where('show',1)
+            ->get();
+    }
+
+    /**
+     * @param int $id
+     * @return mixed
+     */
+    public static function get_answers(int $id)
+    {
+        return Question::where('show',1)
+            ->where('id',$id)
+            ->get()[0]->answers;
+    }
+
+    /**
+     * @param array $answer
+     * @return mixed
+     */
+    public static function set_answer(array $answer)
+    {
+        return UserSetup::create($answer);
     }
 
     /**

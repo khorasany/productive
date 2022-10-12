@@ -26,7 +26,7 @@ class TaskRepo
         return Tasks::with('user')
             ->where('status','=',1)
             ->where('id','=',$id)
-            ->get();
+            ->get()[0];
     }
 
     public static function create(array $task)
